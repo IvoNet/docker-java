@@ -35,6 +35,8 @@ in the container, which is the working directory for the image.
 The run scripts generated assumes that you have maven installed on your local machine in the `~/.m2` folder
 if not you need to adjust the `-v "${HOME}/.m2/repository:/repository"` part of the run.template.sh script
 in e.g. `-v "$(pwd)/.repository:/repository"` just be sure to add the `.repository` folder to the .gitignore file.
+You can also leave out this part completely but then your build will take significantly longer as the 
+dependencies will have to be downloaded every time you build as the container is not kept after a run.
 
 # Troubleshooting
 
