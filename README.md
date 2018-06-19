@@ -1,6 +1,6 @@
-# Python images
+# java images
 
-This project contains python versions to play with on your machine
+This project contains java versions to play with on your machine
 
 # Install
 
@@ -10,20 +10,20 @@ This project contains python versions to play with on your machine
     
 # How it works
 
-Well based on the `install.sh` script a couple of python image versions are pulled and customized
+Well based on the `install.sh` script a couple of java image versions are pulled and customized
 through the `Dockerfile.template` file. With the `sed` command this template file is created into a 
-`Dockerfile` and build by docker into a `ivonet/py$VERSION` image.
+`Dockerfile` and build by docker into a `ivonet/j$VERSION` image.
 A startup shell script is created for every version created in the `~/bin` folder with the following
-naming convention `py$MAJOR_VERSION_NUMBER` e.g. `py3`
+naming convention `j$MAJOR_VERSION_NUMBER` e.g. `py3`
 
 During the build the `requirements.txt` file is installed by pip, so you can use this file to prepare the 
-python image according to your requirements.
+java image according to your requirements.
 
 Look into the `install.sh` to see which versions are currently installed.
 
 # Running
 
-The scripts created will run a python container based on the major version and create a 
+The scripts created will run a java container based on the major version and create a 
 named container for it. Except from the version these images start out "the same", but
 can start varying in their state.
 
