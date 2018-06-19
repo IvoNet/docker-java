@@ -30,6 +30,12 @@ can start varying in their state.
 The run script will mount the folder you are currently standing in to the /project folder
 in the container, which is the working directory for the image.
 
+## Note
+
+The run scripts generated assumes that you have maven installed on your local machine in the `~/.m2` folder
+if not you need to adjust the `-v "${HOME}/.m2/repository:/repository"` part of the run.template.sh script
+in e.g. `-v "$(pwd)/.repository:/repository"` just be sure to add the `.repository` folder to the .gitignore file.
+
 # Troubleshooting
 
 It is assumed is that the `~/bin` exists and resides on the front of your PATH.

@@ -2,11 +2,11 @@ FROM ivonet/openjdk:VERSION
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		maven \
+		gradle \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN sed -i.orig 's/settings-1.0.0.xsd">/settings-1.0.0.xsd">\n   <localRepository>\/repository<\/localRepository>/g' /usr/share/maven/conf/settings.xml
 
-#ENV DISPLAY :0
 WORKDIR /project
 VOLUME ["/project", "/repository"]
 
