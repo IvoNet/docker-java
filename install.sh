@@ -48,4 +48,4 @@ build_it 7 j7
 #build_it 6 j6
 
 
-#docker rmi $(docker images -q -f dangling=true)
+docker rmi $(docker images -q -f dangling=true) 2>/dev/null
