@@ -40,10 +40,10 @@ build_it() {
     clean_state $2
 }
 
-build_it 11 j11
-build_it 10 j10
-build_it 9 j9
 build_it 8 j8
+build_it 11 j11
+#build_it 10 j10
+#build_it 9 j9
 build_it 7 j7
 #build_it 6 j6
 

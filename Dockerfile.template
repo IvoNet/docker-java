@@ -3,9 +3,17 @@ FROM ivonet/openjdk:VERSION
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		maven \
 		gradle \
+		zip \
+	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
+# Maven settings
 RUN sed -i.orig 's/settings-1.0.0.xsd">/settings-1.0.0.xsd">\n   <localRepository>\/repository<\/localRepository>/g' /usr/share/maven/conf/settings.xml
+
+# SDKMAN
+COPY sdkman.sh /tmp/sdkman.sh
+RUN chmod +x "/tmp/sdkman.sh" \
+    && /bin/bash -c "/tmp/sdkman.sh"
 
 WORKDIR /project
 VOLUME ["/project", "/repository"]
